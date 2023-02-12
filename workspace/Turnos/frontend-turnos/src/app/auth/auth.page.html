@@ -1,0 +1,27 @@
+<ion-content>
+  <ion-grid fixed>
+    <ion-row>
+      <ion-col size="2"></ion-col>
+      <ion-col size="6">
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title class="ion-text-center">Iniciar sesión</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <form type="submit" (ngSubmit)="login()" autocomplete="off" [formGroup]="loginFormulario">
+              <ion-input type="text" placeholder="Nombre de usuario"  formControlName="usuario"></ion-input>
+              <ion-input type="password" placeholder="Contraseña"  formControlName="password"></ion-input>
+              <ion-button  expand="block" fill="clear" shape="round" type="submit" *ngIf="!cargando">
+                Entrar
+              </ion-button>
+              <ion-item *ngIf="cargando">
+                <ion-spinner name="dots"></ion-spinner>
+                <ion-label>Cargando el servidor, espere un minuto por favor...</ion-label>
+              </ion-item>
+            </form>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

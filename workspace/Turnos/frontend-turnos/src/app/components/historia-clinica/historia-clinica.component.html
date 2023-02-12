@@ -1,0 +1,129 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-icon name="arrow-back-outline" slot="start" style="margin-left: 1em; font-size: 1.3em; cursor: pointer;"
+      (click)=" volverAtras()"></ion-icon>
+    <ion-title slot="start" style="cursor: pointer;" (click)="volverAtras()">Volver atrás</ion-title>
+    <ion-button (click)="borrarPaciente()" expand="block" fill="clear" shape="round" slot="end" color="danger"
+      *ngIf="paciente.estado">
+      Borrar paciente
+    </ion-button>
+    <ion-button (click)="activarPaciente()" expand="block" fill="clear" shape="round" slot="end" color="success"
+      *ngIf="!paciente.estado">
+      Activar paciente
+    </ion-button>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-grid fixed>
+    <ion-row>
+      <ion-col size="11">
+        <ion-col size="1"></ion-col>
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title class="ion-text-center">{{pacienteFormulario.controls['nombre'].value}}
+            </ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <ion-card>
+              <ion-card-content>
+                <form type="submit" (ngSubmit)="guardarPaciente()" autocomplete="off" [formGroup]="pacienteFormulario">
+                  <ion-item>
+                    <ion-label>Nombre completo: </ion-label>
+                    <ion-input type="text" formControlName="nombre"></ion-input>
+                    <ion-label *ngIf="campoEsValidoPaciente('nombre')" style="color:red;">Escriba un nombre
+                      válido
+                    </ion-label>
+                  </ion-item>
+                  <ion-item>
+                    <ion-label>Sexo: </ion-label>
+                    <ion-select placeholder="Selecione un sexo" formControlName="sexo">
+                      <ion-select-option value="Masculino">Masculino</ion-select-option>
+                      <ion-select-option value="Femenino">Femenino</ion-select-option>
+                    </ion-select>
+                  </ion-item>
+                  <ion-item>
+                    <ion-label>DNI: </ion-label>
+                    <ion-input type="text" formControlName="dni"></ion-input>
+                    <ion-label *ngIf="campoEsValidoPaciente('dni')" style="color:red;">Escriba un DNI válido</ion-label>
+                  </ion-item>
+                  <ion-item>
+                    <ion-label>Fecha de nacimiento: </ion-label>
+                    <ion-input type="text" formControlName="fechaNacimiento">
+                    </ion-input>
+                    <ion-label *ngIf="campoEsValidoPaciente('fechaNacimiento')" style="color:red;">Escriba una fecha
+                      válida
+                    </ion-label>
+                  </ion-item>
+                  <ion-item>
+                    <ion-label>Teléfono: </ion-label>
+                    <ion-input type="text" formControlName="telefono"></ion-input>
+                    <ion-label *ngIf="campoEsValidoPaciente('telefono')" style="color:red;">Escriba un teléfono válido
+                    </ion-label>
+                  </ion-item>
+                  <ion-item>
+                    <ion-label>Dirección: </ion-label>
+                    <ion-input type="text" formControlName="direccion"></ion-input>
+                    <ion-label *ngIf="campoEsValidoPaciente('direccion')" style="color:red;">Escriba una dirección
+                      válida
+                    </ion-label>
+                  </ion-item>
+                  <ion-item>
+                    <ion-label>Obra social: </ion-label>
+                    <ion-input type="text" formControlName="obraSocial"></ion-input>
+                    <ion-label *ngIf="campoEsValidoPaciente('obraSocial')" style="color:red;">Escriba una obra social
+                      válida
+                    </ion-label>
+                  </ion-item>
+                  <ion-button expand="block" fill="clear" shape="round" type="submit">
+                    Guardar datos del paciente
+                  </ion-button>
+                </form>
+              </ion-card-content>
+            </ion-card>
+
+            <ion-card>
+              <ion-card-content>
+                <ion-item>
+                  <ion-card-title>Describa la nueva consulta:</ion-card-title>
+                </ion-item>
+
+
+                <form type="submit" (ngSubmit)="guardarHistoria()" autocomplete="off" [formGroup]="historiaFormulario">
+                  <quill-editor formControlName="historia"></quill-editor>
+                  <ion-button expand="block" fill="clear" shape="round" type="submit">
+                    Guardar historia
+                  </ion-button>
+                </form>
+
+              </ion-card-content>
+            </ion-card>
+
+            <ion-card>
+              <ion-card-content>
+                <ion-item>
+                  <ion-card-title>Historia Clínica:</ion-card-title>
+                </ion-item>
+
+                <div *ngFor="let historia of historiaClinica">
+                  <ion-card *ngIf="historia.fecha != ''">
+                    <ion-card-header>
+                      <ion-card-title>{{historia.fecha}}:</ion-card-title>
+                    </ion-card-header>
+                    <ion-card-content>
+                      <ion-text>
+                        <div [innerHTML]="historia.historia"></div>
+                      </ion-text>
+                    </ion-card-content>
+                  </ion-card>
+                </div>
+
+
+              </ion-card-content>
+            </ion-card>
+
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
