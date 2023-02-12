@@ -6,8 +6,8 @@ import Server from './classes/server';
 import roles from './routes/rol';
 import usuarios from './routes/usuario';
 import auth from './routes/auth';
-import paciente from './routes/paciente';
-import historias from './routes/historia';
+import servicio from './routes/servicio';
+import clientes from './routes/cliente';
 
 
 const server = Server.instance;
@@ -22,8 +22,8 @@ server.app.use(cors({ origin: true, credentials: true }));
 server.app.use('/api/roles', roles);
 server.app.use('/api/usuarios', usuarios);
 server.app.use('/api/auth', auth);
-server.app.use('/api/pacientes', paciente);
-server.app.use('/api/historias', historias);
+server.app.use('/api/servicios', servicio);
+server.app.use('/api/clientes', clientes);
 
 
 server.start(() => {

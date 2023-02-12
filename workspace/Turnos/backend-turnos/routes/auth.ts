@@ -13,7 +13,7 @@ router.post('/google', [
     validarCampos
 ], googleSignIn);
 
-router.post('/login',[
+router.post('/',[
     check('correo', 'El correo es obligatorio').isEmail(),
     check('password', 'La contraseña es obligatoria').not().isEmpty(),
     validarCampos
