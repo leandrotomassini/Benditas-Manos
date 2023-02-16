@@ -1,4 +1,4 @@
 export const environment = {
-    baseUrl: 'http://localhost:3000',
-    wsUrl: 'http://localhost:3000'
+    baseUrl: 'http://192.168.1.36:3000',
+    wsUrl: 'http://192.168.1.36:3000'
 };
