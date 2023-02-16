@@ -1,7 +1,0 @@
-{
-  "name": "dermatologia",
-  "integrations": {
-    "capacitor": {}
-  },
-  "type": "angular"
-}

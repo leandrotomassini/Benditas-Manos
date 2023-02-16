@@ -1,34 +1,23 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { RouteReuseStrategy } from '@angular/router';
-import { HttpClientModule } from '@angular/common/http';
-import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
-import { QuillModule } from 'ngx-quill';
 
-import { environment } from 'src/environments/environment';
-
-import { AppComponent } from './app.component';
-import { AppRoutingModule } from './app-routing.module';
-
-// Sockets
 import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
 
-const config: SocketIoConfig = {
-  url: environment.wsUrl,
-  options: {}
-};
+import { environment } from 'src/environments/environment.development';
+
+import { AppComponent } from './app.component';
+
+const config: SocketIoConfig = { url: environment.wsUrl, options: {} };
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [
+    AppComponent
+  ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(),
-    AppRoutingModule,
-    HttpClientModule,
-    SocketIoModule.forRoot(config),
-    QuillModule.forRoot()
+    SocketIoModule.forRoot(config)
   ],
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
-  bootstrap: [AppComponent],
+  providers: [],
+  bootstrap: [AppComponent]
 })
 export class AppModule { }
