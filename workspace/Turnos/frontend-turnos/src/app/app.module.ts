@@ -23,9 +23,9 @@ const config: SocketIoConfig = { url: environment.wsUrl, options: {} };
   imports: [
     BrowserModule,
     SocketIoModule.forRoot(config),
-    MaterialModule,
     BrowserAnimationsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]

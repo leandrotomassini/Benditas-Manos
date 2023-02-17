@@ -1,8 +1,24 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-export const routes: Routes = [
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { PromocionesComponent } from './pages/promociones/promociones.component';
 
+export const routes: Routes = [
+  {
+    path: '',
+    component: DashboardComponent,
+    children: [
+      {
+        path: 'promociones',
+        component: PromocionesComponent
+      },
+      {
+        path: '**',
+        redirectTo: ''
+      }
+    ]
+  }
 ];
 
 @NgModule({

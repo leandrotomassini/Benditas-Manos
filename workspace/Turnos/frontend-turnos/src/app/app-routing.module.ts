@@ -19,6 +19,10 @@ const routes: Routes = [
     loadChildren: () => import('./tienda/tienda.module').then(m => m.TiendaModule)
   },
   {
+    path: 'panel-control',
+    loadChildren: () => import('./panel-control/panel-control.module').then(m => m.PanelControlModule)
+  },
+  {
     path: '**',
     redirectTo: ''
   }

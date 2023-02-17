@@ -11,11 +11,8 @@ import { VerPromocionComponent } from './pages/ver-promocion/ver-promocion.compo
 export const routes: Routes = [
   {
     path: '',
+    component: TiendaComponent,
     children: [
-      {
-        path: '',
-        component: TiendaComponent
-      },
       {
         path: 'promociones',
         component: PromocionesComponent
@@ -31,7 +28,7 @@ export const routes: Routes = [
       {
         path: 'turnos',
         component: ReservarTurnoComponent
-      },      
+      },
       {
         path: '**',
         redirectTo: ''
