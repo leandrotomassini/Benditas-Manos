@@ -1,2 +1,25 @@
-<p>dashboard works!</p>
-<router-outlet></router-outlet>
+<mat-sidenav-container fullscreen>
+
+    <mat-sidenav #sidenav mode="push">
+        <mat-toolbar>
+            <span>Menú</span>
+        </mat-toolbar>
+        <mat-nav-list>
+            <a routerLink="./" mat-list-item (click)="sidenav.toggle()">
+                <mat-icon mat-list-icon>fact_check_outlined</mat-icon>
+                <span>Inicio</span>
+            </a>
+            <a routerLink="./promociones" mat-list-item (click)="sidenav.toggle()">
+                <span>Promociones</span>
+            </a>
+        </mat-nav-list>
+    </mat-sidenav>
+
+    <mat-toolbar>
+        <mat-icon aria-hidden="false" fontIcon="menu" (click)="sidenav.toggle()"></mat-icon>
+    </mat-toolbar>
+
+
+    <router-outlet></router-outlet>
+
+</mat-sidenav-container>
