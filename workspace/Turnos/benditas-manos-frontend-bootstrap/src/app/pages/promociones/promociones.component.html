@@ -1,0 +1,34 @@
+<div class="container">
+  <h2>Promociones</h2>
+  
+  <div class="search-box">
+    <input type="text" [(ngModel)]="searchTerm" placeholder="Buscar" (input)="applyFilter()">
+  </div>
+  <div *ngIf="filteredPromos.length > 0; else noResults">
+    <table>
+      <thead>
+        <tr>
+          <th (click)="sortBy('id')">ID</th>
+          <th (click)="sortBy('promocion')">Promoción</th>
+          <th (click)="sortBy('precio')">Precio</th>
+          <th>Opciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let promo of filteredPromos" (click)="selectRow(promo)"
+          [ngClass]="{ 'selected': promo === selectedPromo }">
+          <td>{{ promo.id }}</td>
+          <td>{{ promo.promocion }}</td>
+          <td>{{ promo.precio }}</td>
+          <td>
+            <button class="btn btn-primary btn-sm" (click)="editPromo(promo)">Editar</button>
+            <button class="btn btn-danger btn-sm" (click)="deletePromo(promo)">Borrar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <ng-template #noResults>
+    <p>No se encontraron resultados para la búsqueda.</p>
+  </ng-template>
+</div>

@@ -1,0 +1,84 @@
+/* Estilos globales */
+* {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+/* Agregar la fuente desde Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+
+/* MENU PRINCIPAL */
+
+.menu-principal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1em;
+    background-color: rgba(255, 255, 255, 0.9);
+    font-family: "Lato", sans-serif;
+    font-size: 1.5em;
+}
+
+.menu-principal__logo {
+    font-family: 'Lato', sans-serif;
+    font-size: 1em;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #333;
+    margin-left: 1em;
+    margin-right: 20px;
+}
+
+.menu-principal__logo:hover {
+    color: #e91e63;
+    transform: scale(1.1);
+    transition: all 0.2s ease-in-out;
+}
+
+.menu-principal__opciones {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.menu-principal__opciones ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: 3em;
+    margin: 0;
+}
+
+.menu-principal__opciones ul li a{
+    margin-left: 20px;
+    padding: 0 10px;
+    transition: all 0.2s ease-in-out;
+    text-decoration: none;
+    color: #565656;
+}
+
+.menu-principal__opciones ul li a:hover {
+    color: #e91e63;
+    transform: scale(1.1);
+}
+
+.menu-principal__opciones ul li a:last-child {
+    margin-right: 0;
+}
+
+/* ESTILOS ADICIONALES */
+
+body {
+    font-family: "Lato", sans-serif;
+}
+
+.contenido-principal{
+    margin-top: 8em;
+}

@@ -1,25 +1,42 @@
-<mat-sidenav-container fullscreen>
-
-    <mat-sidenav #sidenav mode="push">
-        <mat-toolbar>
-            <span>Menú</span>
-        </mat-toolbar>
-        <mat-nav-list>
-            <a routerLink="./" mat-list-item (click)="sidenav.toggle()">
-                <mat-icon mat-list-icon>fact_check_outlined</mat-icon>
-                <span>Inicio</span>
-            </a>
-            <a routerLink="./promociones" mat-list-item (click)="sidenav.toggle()">
-                <span>Promociones</span>
-            </a>
-        </mat-nav-list>
+<mat-toolbar color="primary">
+    <button mat-icon-button (click)="sidenav.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span>Menú Principal</span>
+  </mat-toolbar>
+  
+  <mat-sidenav-container>
+    <mat-sidenav #sidenav mode="push" [opened]="false" [disableClose]="false">
+      <mat-toolbar color="accent">
+        <span>Panel de Control</span>
+        <button mat-icon-button (click)="sidenav.toggle()">
+          <mat-icon>close</mat-icon>
+        </button>
+      </mat-toolbar>
+      <mat-nav-list>
+        <a mat-list-item routerLink="/promociones" routerLinkActive="active" (click)="sidenav.toggle()">
+          <mat-icon mat-list-icon>local_offer</mat-icon>
+          <span>Promociones</span>
+        </a>
+        <a mat-list-item routerLink="/usuarios" routerLinkActive="active" (click)="sidenav.toggle()">
+          <mat-icon mat-list-icon>people</mat-icon>
+          <span>Usuarios</span>
+        </a>
+        <a mat-list-item routerLink="/caja" routerLinkActive="active" (click)="sidenav.toggle()">
+          <mat-icon mat-list-icon>attach_money</mat-icon>
+          <span>Caja</span>
+        </a>
+        <a mat-list-item routerLink="/clientes" routerLinkActive="active" (click)="sidenav.toggle()">
+          <mat-icon mat-list-icon>person</mat-icon>
+          <span>Clientes</span>
+        </a>
+      </mat-nav-list>
     </mat-sidenav>
-
+  
     <mat-toolbar>
-        <mat-icon aria-hidden="false" fontIcon="menu" (click)="sidenav.toggle()"></mat-icon>
+      <span>Contenido de la aplicación</span>
     </mat-toolbar>
-
-
+  
     <router-outlet></router-outlet>
-
-</mat-sidenav-container>
+  </mat-sidenav-container>
+  

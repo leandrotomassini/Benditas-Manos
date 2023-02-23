@@ -1,0 +1,11 @@
+.container{
+    display: grid;
+    grid-template-rows: min-content auto;
+}
+
+.container__main{
+    display: grid;
+    grid-template-columns: min-content auto;
+    height: 100vh;
+}
+
