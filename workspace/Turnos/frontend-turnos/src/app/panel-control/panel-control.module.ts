@@ -13,12 +13,11 @@ import { PromocionesComponent } from './pages/promociones/promociones.component'
   declarations: [
     DashboardComponent,
     PromocionesComponent,
-    
   ],
   imports: [
     CommonModule,
+    MaterialModule,
     PanelControlRoutingModule,
-    MaterialModule
   ]
 })
 export class PanelControlModule { }

@@ -1,16 +1,30 @@
 mat-sidenav-container {
-    height: 100%;
-  }
-  
-  mat-sidenav {
-    width: 250px;
-  }
-  
-  mat-sidenav-content {
-    padding: 15px;
-  }
-  
-  .active {
-    background-color: rgba(0, 0, 0, 0.04);
-  }
-  
+  height: 100%;
+}
+
+mat-sidenav {
+  width: 250px;
+}
+
+mat-sidenav-content {
+  padding: 15px;
+}
+
+.active {
+  background-color: rgba(0, 0, 0, 0.04);
+}
+
+.opcion {
+  display: flex;
+  align-items: center;
+}
+
+.opcion mat-icon{
+  margin-right: .5em;
+}
+
+.cabecera-menu{
+  display: flex;
+  align-items: center;
+  justify-content: space-between  ;
+}

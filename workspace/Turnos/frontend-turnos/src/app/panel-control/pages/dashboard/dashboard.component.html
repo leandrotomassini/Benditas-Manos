@@ -1,42 +1,59 @@
 <mat-toolbar color="primary">
-    <button mat-icon-button (click)="sidenav.toggle()">
-      <mat-icon>menu</mat-icon>
-    </button>
-    <span>Menú Principal</span>
-  </mat-toolbar>
-  
-  <mat-sidenav-container>
-    <mat-sidenav #sidenav mode="push" [opened]="false" [disableClose]="false">
-      <mat-toolbar color="accent">
+
+  <button mat-icon-button (click)="sidenav.toggle()">
+    <mat-icon>menu</mat-icon>
+  </button>
+
+  <span>Menú Principal</span>
+
+  <span class="example-spacer"></span>
+
+  <button mat-icon-button>
+    <mat-icon>login</mat-icon>
+  </button>
+</mat-toolbar>
+
+<mat-sidenav-container>
+  <mat-sidenav #sidenav mode="push" [opened]="false" [disableClose]="false">
+    <mat-toolbar >
+      <div class="cabecera-menu">
         <span>Panel de Control</span>
         <button mat-icon-button (click)="sidenav.toggle()">
           <mat-icon>close</mat-icon>
         </button>
-      </mat-toolbar>
-      <mat-nav-list>
-        <a mat-list-item routerLink="/promociones" routerLinkActive="active" (click)="sidenav.toggle()">
+      </div>
+    </mat-toolbar>
+
+    <mat-nav-list>
+      <a mat-list-item routerLink="/panel-control/promociones" routerLinkActive="active" (click)="sidenav.toggle()">
+        <div class="opcion">
           <mat-icon mat-list-icon>local_offer</mat-icon>
           <span>Promociones</span>
-        </a>
-        <a mat-list-item routerLink="/usuarios" routerLinkActive="active" (click)="sidenav.toggle()">
+        </div>
+      </a>
+      <a mat-list-item routerLink="/panel-control/usuarios" routerLinkActive="active" (click)="sidenav.toggle()">
+        <div class="opcion">
           <mat-icon mat-list-icon>people</mat-icon>
           <span>Usuarios</span>
-        </a>
-        <a mat-list-item routerLink="/caja" routerLinkActive="active" (click)="sidenav.toggle()">
+        </div>
+      </a>
+      <a mat-list-item routerLink="/panel-control/caja" routerLinkActive="active" (click)="sidenav.toggle()">
+        <div class="opcion">
           <mat-icon mat-list-icon>attach_money</mat-icon>
           <span>Caja</span>
-        </a>
-        <a mat-list-item routerLink="/clientes" routerLinkActive="active" (click)="sidenav.toggle()">
+        </div>
+      </a>
+      <a mat-list-item routerLink="/panel-control/clientes" routerLinkActive="active" (click)="sidenav.toggle()">
+        <div class="opcion">
           <mat-icon mat-list-icon>person</mat-icon>
           <span>Clientes</span>
-        </a>
-      </mat-nav-list>
-    </mat-sidenav>
-  
-    <mat-toolbar>
-      <span>Contenido de la aplicación</span>
-    </mat-toolbar>
-  
+        </div>
+      </a>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-toolbar>
     <router-outlet></router-outlet>
-  </mat-sidenav-container>
-  
+  </mat-toolbar>
+
+</mat-sidenav-container>
