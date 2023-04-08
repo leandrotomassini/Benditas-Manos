@@ -1,0 +1,17 @@
+.container {
+    display: flex;
+    justify-content: center;
+    background-color: #E91E63;
+    height: 100%;
+}
+
+.caja-login {
+    margin-top: 10%;
+    width: auto;
+    height: 10em;
+}
+
+mat-card-header {
+    display: flex;
+    justify-content: center;
+}
