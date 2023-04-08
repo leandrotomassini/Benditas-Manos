@@ -3,8 +3,22 @@
         <mat-card-header>
             <mat-card-title>Iniciar sesión</mat-card-title>
         </mat-card-header>
-        <mat-card-actions>
-            <div id="buttonDiv" #googleBtn class="btnGoogle"></div>
-        </mat-card-actions>
+        <mat-card-content>
+            <form>
+                <mat-form-field class="example-full-width">
+                    <mat-label>Usuario</mat-label>
+                    <input matInput placeholder="Ingrese su usuario" value="">
+                </mat-form-field>
+                <br>
+                <mat-form-field class="example-full-width">
+                    <mat-label>Contraseña</mat-label>
+                    <input matInput placeholder="Ingrese su contraseña" value="" type="password">
+                </mat-form-field>
+                <br>
+                <div class="boton">
+                    <button mat-button color="primary">Ingresar</button>
+                </div>
+            </form>
+        </mat-card-content>
     </mat-card>
 </div>

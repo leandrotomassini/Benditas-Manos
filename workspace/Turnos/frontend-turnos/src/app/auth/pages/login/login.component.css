@@ -8,10 +8,19 @@
 .caja-login {
     margin-top: 10%;
     width: auto;
-    height: 10em;
+    height: 20em;
 }
 
 mat-card-header {
+    display: flex;
+    justify-content: center;
+}
+
+mat-card-content {
+    padding-top: 1em;
+}
+
+.boton {
     display: flex;
     justify-content: center;
 }
