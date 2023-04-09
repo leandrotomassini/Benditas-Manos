@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
+import { UsuarioService } from 'src/app/services/usuario.service';
+
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
@@ -8,9 +10,12 @@ import { Router } from '@angular/router';
 })
 export class DashboardComponent {
 
-  constructor(private router: Router) { }
+  constructor(
+    private router: Router,
+    private usuarioService: UsuarioService
+  ) { }
 
   salir() {
-    this.router.navigateByUrl('/entrar');
+    this.usuarioService.logout();
   }
 }

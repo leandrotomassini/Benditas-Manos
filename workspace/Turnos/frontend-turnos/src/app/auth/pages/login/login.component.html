@@ -4,15 +4,15 @@
             <mat-card-title>Iniciar sesión</mat-card-title>
         </mat-card-header>
         <mat-card-content>
-            <form>
+            <form id="loginform" autocomplete="off" [formGroup]="loginForm" (ngSubmit)="login()">
                 <mat-form-field class="example-full-width">
                     <mat-label>Usuario</mat-label>
-                    <input matInput placeholder="Ingrese su usuario" value="">
+                    <input matInput placeholder="Ingrese su usuario" value="" formControlName="correo">
                 </mat-form-field>
                 <br>
                 <mat-form-field class="example-full-width">
                     <mat-label>Contraseña</mat-label>
-                    <input matInput placeholder="Ingrese su contraseña" value="" type="password">
+                    <input matInput placeholder="Ingrese su contraseña" value="" type="password" formControlName="password">
                 </mat-form-field>
                 <br>
                 <div class="boton">
